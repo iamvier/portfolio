@@ -1,0 +1,21 @@
+.footer-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  background-color: #000; /* Same background as the rest */}
+
+.footer-container a {
+  font-size: 1.5rem; /* Increase icon size */
+  text-decoration: none;
+  color: #000;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.footer-container a:hover {
+  color: #333;
+  transform: scale(1.1); /* Hover effect to match the header */
+}
+
+.footer-container a + a {
+  margin-left: 1.5rem; /* Space between icons */
+}
