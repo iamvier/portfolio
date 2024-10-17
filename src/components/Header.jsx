@@ -11,7 +11,7 @@ const Header = () => {
         <img src={letterV} alt="Name Icon" className="name-icon" /> 
       </div>
       <nav className="header-middle">
-        <a href="#home">About me</a>
+        <a href="#home">About</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#skills">Skills</a>
       </nav>

@@ -1,0 +1,79 @@
+.portfolio-section {
+  padding: 4rem 0; /* Adjusted padding to control space at the top and bottom */
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.portfolio-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.portfolio-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem 10rem;
+}
+
+.portfolio-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: calc(50% - 2rem); /* Ensures two cards per row */
+  min-width: 400px;
+  max-width: 700px; /* This prevents cards from being too wide */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+  min-height: 400px; /* Set a minimum height for cards */
+}
+
+.portfolio-card:hover {
+  transform: translateY(-10px);
+}
+
+.portfolio-image {
+  width: 100%;
+  height: auto; /* Set a fixed height for images */
+  object-fit: cover; /* Maintain aspect ratio, cropping if necessary */
+}
+
+.portfolio-info {
+  padding: 1.5rem;
+  text-align: left;
+  flex-grow: 1; /* Allow this section to grow and fill the card */
+}
+
+.portfolio-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.portfolio-info p {
+  font-size: 1rem;
+  color: #777;
+}
+
+.view-link {
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+.view-link:hover {
+  text-decoration: underline;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .portfolio-card {
+    width: 100%; /* Make each card take full width on smaller screens */
+  }
+}

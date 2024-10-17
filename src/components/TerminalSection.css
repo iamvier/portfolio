@@ -1,0 +1,84 @@
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.terminal-container {
+  background-color: #1e1e1e;
+  color: #c5c8c6;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 10px;
+  width: 60rem;
+  margin: 2rem auto;
+}
+
+.terminal-header {
+  background-color: #2d2d2d;
+  color: #808080;
+  padding: 5px 10px;
+  border-radius: 10px 10px 0 0;
+  font-size: 14px;
+}
+
+.header-text {
+  color: #808080;
+}
+
+.terminal-body {
+  margin: 0px 20px;
+  padding: 10px 0;
+}
+
+.command {
+  color: #4ea6fd;
+}
+
+.terminal-path {
+  color: #a9a9a9;
+}
+
+.user {
+  color: #b9ca4a;
+}
+
+.input-line {
+  display: flex;
+  align-items: center;
+}
+
+.icone {
+  color: #4ea6fd;
+  margin-right: 10px;
+}
+
+input {
+  background: none;
+  width: 100%;
+  border: none;
+  color: #c5c8c6;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  outline: none;
+}
+
+.error {
+  color: #ff0000;
+}
+
+.user-command {
+  color: #00ff00;
+  font-weight: bold;
+}
+
+#white-right-angle {
+  width: 20px;
+  height: 10px;
+  margin-left: -5px;
+}
+
+@media (max-width: 768px) {
+  .terminal-container {
+    width: 90%;
+  }
+}

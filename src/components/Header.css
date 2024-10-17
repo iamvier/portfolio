@@ -1,15 +1,20 @@
 .header-container {
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 4rem 0rem 4rem;
   background-color: #ffffff;
+}
+
+.header-left, .header-middle, .header-right {
+  display: flex;
+  align-items: center;
+  margin: 20px;
 }
 
 .header-left {
   display: flex;
   align-items: center;
-  margin-right: 1rem;
 }
 
 .name-icon {
@@ -30,7 +35,20 @@
 }
 
 .header-middle a:hover {
-  color: #333;
+  color: #FFDD57;
+  animation: linkHoverAnimation 0.3s ease-in-out;
+}
+
+@keyframes linkHoverAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .header-right {

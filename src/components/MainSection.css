@@ -36,20 +36,20 @@
   margin-top: 2rem;
 }
 
-.work-button, .projects-button {
+.resume-button, .projects-button {
   padding: 1rem 2rem;
   font-size: 1.2rem;
   border: none;
   cursor: pointer;
 }
 
-.work-button {
+.resume-button {
   background-color: #000;
   color: #FFDD57;
   transition: background-color 0.3s;
 }
 
-.work-button:hover {
+.resume-button:hover {
   background-color: #333;
 }
 
@@ -67,11 +67,10 @@
 }
 
 .avatar-section {
-  flex: 0 0 50%; /* Sets the avatar section to occupy half of the container */
+  flex: 0 0 50%;
   display: flex;
-  justify-content: center;
-  align-items: flex-end; /* Ensures the avatar is vertically centered */
-  padding-left: 2rem; /* Optional: Adjust padding for aesthetics */
+  align-items: flex-end; 
+  padding-left: 2rem;
 }
 
 .avatar-image {

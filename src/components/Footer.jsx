@@ -4,10 +4,7 @@ import './Footer.css';
 const Footer = () => {
   return (
     <footer className="footer-container">
-      <a href="#"><i>🎨</i></a>
-      <a href="#"><i>📷</i></a>
-      <a href="#"><i>🐦</i></a>
-      <a href="#"><i>💼</i></a>
+      <p>footer</p>
     </footer>
   );
 };

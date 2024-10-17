@@ -1,5 +1,5 @@
 import React from 'react';
-import './MainSection.css';  // Linking the CSS
+import './MainSection.css';
 
 const MainSection = () => {
   return (
@@ -8,7 +8,7 @@ const MainSection = () => {
         <h1>Hey! I'm Viery, <br /> I love building things.</h1>
         <p>A cloud enthusiast that is</p>
         <div className="button-container">
-          <button className="work-button">Work with me</button>
+          <button className="resume-button">Resume</button>
           <button className="projects-button">Check out my projects</button>
         </div>
       </div>
