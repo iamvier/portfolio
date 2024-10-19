@@ -1,9 +1,13 @@
+header{
+  margin: 0;
+  padding: 0;
+}
+
 .header-container {
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff;
 }
 
 .header-left, .header-middle, .header-right {

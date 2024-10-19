@@ -1,6 +1,7 @@
 .portfolio-section {
-  padding: 4rem 0; /* Adjusted padding to control space at the top and bottom */
+  padding: 2rem 0;
   background-color: #f9f9f9;
+  width: 100%;
   text-align: center;
 }
 
@@ -15,21 +16,23 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
-  padding: 2rem 10rem;
+  padding: 2rem 8rem;
+  min-width: 0;
 }
 
 .portfolio-card {
+  text-decoration: none;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   width: calc(50% - 2rem); /* Ensures two cards per row */
   min-width: 400px;
-  max-width: 700px; /* This prevents cards from being too wide */
+  max-width: 700px; 
+  min-height: 400px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
   display: flex; /* Use flexbox for layout */
   flex-direction: column; /* Stack children vertically */
-  min-height: 400px; /* Set a minimum height for cards */
 }
 
 .portfolio-card:hover {
@@ -38,19 +41,19 @@
 
 .portfolio-image {
   width: 100%;
-  height: auto; /* Set a fixed height for images */
-  object-fit: cover; /* Maintain aspect ratio, cropping if necessary */
+  height: 100%;
+  object-fit: cover; /* Maintain the aspect ratio and ensure the image covers the container */
 }
 
 .portfolio-info {
-  padding: 1.5rem;
+  padding: 0 1.5rem 1.5rem 1.5rem;
   text-align: left;
   flex-grow: 1; /* Allow this section to grow and fill the card */
 }
 
 .portfolio-info h3 {
   font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: -0.5rem;
   color: #333;
 }
 
@@ -59,7 +62,7 @@
   color: #777;
 }
 
-.view-link {
+#view-button {
   color: #007bff;
   font-weight: bold;
   text-decoration: none;
@@ -67,11 +70,22 @@
   display: inline-block;
 }
 
-.view-link:hover {
+#view-button:hover {
   text-decoration: underline;
 }
 
-/* Media Query for smaller screens */
+@media (max-width: 1090px) {
+  .portfolio-cards {
+    min-width: 400px; /* Make each card take full width on smaller screens */
+    height: auto;
+    width: auto;
+  }
+  .portfolio-card {
+    width: 100%; /* Make each card take full width on smaller screens */
+  }
+}
+
+
 @media (max-width: 768px) {
   .portfolio-card {
     width: 100%; /* Make each card take full width on smaller screens */

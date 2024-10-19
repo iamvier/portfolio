@@ -1,8 +1,8 @@
 import React from "react";
 import "./Header.css";
-import letterV from "../assets/icons/letter-v.png"; // Corrected path
-import linkedinIcon from "../assets/icons/blue-linkedin.png"; // Corrected path
-import githubIcon from "../assets/icons/github.png"; // Corrected path
+import letterV from "../assets/icons/letter-v.png"; 
+import linkedinIcon from "../assets/icons/blue-linkedin.png"; 
+import githubIcon from "../assets/icons/github.png"; 
 
 const Header = () => {
   return (
@@ -11,7 +11,7 @@ const Header = () => {
         <img src={letterV} alt="Name Icon" className="name-icon" /> 
       </div>
       <nav className="header-middle">
-        <a href="#home">About</a>
+        <a href="#home">Terminal</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#skills">Skills</a>
       </nav>

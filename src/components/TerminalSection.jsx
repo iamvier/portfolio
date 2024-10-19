@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import whiteRightAngle from '../assets/icons/whiteRightAngle.svg';
-import greenRightAngle from '../assets/icons/greenRightAngle.svg'; //belum kepakai
 import './TerminalSection.css';
 
 const TerminalSection = () => {
@@ -10,11 +9,12 @@ const TerminalSection = () => {
         {
             type: 'group', 
             value: [
-                { type: 'text', value: 'You can run several commands:' },
-                { type: 'command', code: '‎ about me', description: 'Who am I and what do I do.', delay: 500 },
-                { type: 'command', code: '‎ github', description: 'View my GitHub profile.' },
-                { type: 'command', code: '‎ linkedin', description: 'View my LinkedIn profile.' },
-                { type: 'command', code: '‎ clear', description: 'Clear the terminal.' },
+                { type: 'text', value: 'Available commands::' },
+                { type: 'command', code: '‎ about', description: 'Get to know who I am and my background.' },
+                { type: 'command', code: '‎ github', description: 'Check out my GitHub projects and repositories.' },
+                { type: 'command', code: '‎ linkedin', description: 'Explore my professional profile on LinkedIn.' },
+                { type: 'command', code: '‎ restart', description: 'Clear the terminal and restart the session.' },
+                { type: 'command', code: '‎ clear', description: 'Clean the terminal without restarting.' },
             ],
             delay: 2000
         },
@@ -24,7 +24,7 @@ const TerminalSection = () => {
     const [terminalContent, setTerminalContent] = useState([]);
     const [inputValue, setInputValue] = useState('');
     const [executedCommand, setExecutedCommand] = useState(null);
-
+    
     useEffect(() => {
         let currentIndex = 0;
 
@@ -56,33 +56,63 @@ const TerminalSection = () => {
     };
 
     const processCommand = () => {
-        //Ngulangin input tapi masih belum benar karena maunya waktu inputnya success baru repeat, error gk direpeat.
-        setTerminalContent(prev => [
-            ...prev,
-            { type: 'user-input', value: inputValue }
-        ]);
-
-        if (inputValue === 'about me') {
+        if (inputValue === 'about') {
             setTerminalContent(prev => [
                 ...prev,
-                { type: 'text', value: 'Name: Viery' },
+                { type: 'user-input', value: inputValue },
+                { type: 'text', value: 'Name: Viery Joynaden' },
                 { type: 'text', value: 'Age: 20' },
-                { type: 'text', value: 'Currently: Studying Information Systems in BINUS University' },
+                { type: 'text', value: 'Location: Tangerang, Indonesia' },
+                { type: 'text', value: 'Currently Studying Information Systems in BINUS University' },
+                {
+                    type: 'tech-stack',
+                    categories: [
+                        {
+                            title: 'Frontend',
+                            technologies: [
+                                { name: 'HTML', color: '#E34C26' },
+                                { name: 'CSS', color: '#264DE4' },
+                                { name: 'React', color: '#61DBFB' },
+                                { name: 'Vite', color: '#646CFF' },
+                                { name: 'Bootstrap', color: '#7952B3' }
+                            ]
+                        },
+                        {
+                            title: 'Backend',
+                            technologies: [
+                                { name: 'Java', color: '#b07219' },
+                                { name: 'Laravel', color: '#FF2D20' },
+                                { name: 'mySQL', color: '#00758F' },
+                                { name: 'Node.js', color: '#50C878' }
+                            ]
+                        },
+                        {
+                            title: 'Cloud Platforms',
+                            technologies: [
+                                { name: 'AWS', color: '#FF9900' },
+                                { name: 'Google Cloud', color: '#4285F4' }
+                            ]
+                        }
+                    ]
+                },
                 { type: 'path', value: '# user in ~/iamvier' }
             ]);
         } else if (inputValue === 'github') {
             setTerminalContent(prev => [
                 ...prev,
+                { type: 'user-input', value: inputValue },
                 { type: 'text', value: '<a href="https://github.com/iamvier" target="_blank">GitHub Profile</a>' },
                 { type: 'path', value: '# user in ~/iamvier' }
             ]);
         } else if (inputValue === 'linkedin') {
             setTerminalContent(prev => [
                 ...prev,
+                { type: 'user-input', value: inputValue },
                 { type: 'text', value: '<a href="https://linkedin.com/in/iamvier" target="_blank">LinkedIn Profile</a>' },
                 { type: 'path', value: '# user in ~/iamvier' }
             ]);
-        } else if (inputValue === 'clear') {
+        } else if (inputValue === 'restart') {
+            // Clear the terminal and restart with the initial content
             setTerminalContent([]);
             let currentIndex = 0;
             setTimeout(() => {
@@ -100,6 +130,8 @@ const TerminalSection = () => {
                 };
                 resetContentWithDelay();
             }, 500);
+        } else if (inputValue === 'clear') {
+            setTerminalContent([]);
         } else {
             setTerminalContent(prev => [
                 ...prev,
@@ -109,7 +141,7 @@ const TerminalSection = () => {
         }
         setInputValue('');
     };
-
+    
     return (
         <div className="terminal-container" onClick={() => document.querySelector('input').focus()}>
             <div className="terminal-header">
@@ -119,6 +151,23 @@ const TerminalSection = () => {
                 {terminalContent.map((item, index) => {
                     if (item.type === 'text') {
                         return <p key={index} dangerouslySetInnerHTML={{ __html: item.value }} />;
+                    } else if (item.type === 'tech-stack') {
+                        return (
+                            <div key={index} className="tech-stack">
+                                {item.categories.map((category, i) => (
+                                    <div key={i} className="category">
+                                        <p>{category.title}:</p>
+                                        <ul>
+                                            {category.technologies.map((tech, j) => (
+                                                <li key={j} style={{ color: tech.color }}>
+                                                    {tech.name}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                            </div>
+                        );
                     } else if (item.type === 'command') {
                         return (
                             <p key={index}>
@@ -140,7 +189,7 @@ const TerminalSection = () => {
                         type="text"
                         value={inputValue}
                         onChange={(e) => setInputValue(e.target.value)}
-                        onKeyPress={handleKeyPress} //perlu buat enter
+                        onKeyPress={handleKeyPress}
                         autoFocus
                     />
                 </div>

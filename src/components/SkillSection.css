@@ -1,0 +1,114 @@
+/* Skill section */
+.skill-section {
+  padding: 2rem 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+.skill-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+/* Skill category */
+.skill-category {
+  margin-bottom: 2rem;
+}
+
+.skill-category h3 {
+  font-size: 1.8rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* Skills container */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Individual skill item */
+.skill {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 150px;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  color: #333;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.skill i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill span {
+  font-size: 1rem;
+  display: block;
+}
+
+/* Hover effect */
+.skill:hover {
+  transform: translateY(-5px);
+  background-color: #f0f0f0;
+  border-color: #ccc;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Skill-specific colors on hover */
+.skill:hover .fab.fa-html5 {
+  color: #e34f26; /* HTML (orangey) */
+}
+.skill:hover .fab.fa-css3-alt {
+  color: #1572b6; /* CSS (blue) */
+}
+.skill:hover .fab.fa-js-square {
+  color: #f7df1e; /* JavaScript (yellow) */
+}
+.skill:hover .fab.fa-react {
+  color: #61dafb; /* React (light blue) */
+}
+.skill:hover .fas.fa-rocket {
+  color: #646cff; /* Vite (purple) */
+}
+.skill:hover .fab.fa-bootstrap {
+  color: #7952b3; /* Bootstrap (purple) */
+}
+.skill:hover .fab.fa-node-js {
+  color: #68a063; /* Node.js (green) */
+}
+.skill:hover .fas.fa-database {
+  color: #4479a1; /* MySQL (blue) */
+}
+.skill:hover .fab.fa-laravel {
+  color: #ff2d20; /* Laravel (red) */
+}
+.skill:hover .fab.fa-java {
+  color: #007396; /* Java (blue) */
+}
+.skill:hover .fab.fa-git-alt {
+  color: #f05032; /* Git (orange) */
+}
+.skill:hover .fab.fa-figma {
+  color: #f24e1e; /* Figma (red-orange) */
+}
+.skill:hover .fas.fa-code {
+  color: #007acc; /* VS Code (blue) */
+}
+.skill:hover .fas.fa-moon {
+  color: #0e3a6b; /* Eclipse (dark blue) */
+}
+.skill:hover .fab.fa-aws {
+  color: #ff9900; /* AWS (orange) */
+}
+.skill:hover .fab.fa-google {
+  color: #4285f4; /* Google Cloud (blue) */
+}

@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
 html {
-  margin: 0;
-  padding: 0;
+  background-color: white;
   box-sizing: border-box;
+  font-family: 'Lexend', sans-serif;
 }
 
 .terminal-container {
   background-color: #1e1e1e;
   color: #c5c8c6;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Lexend', sans-serif;
   border-radius: 10px;
   width: 60rem;
   margin: 2rem auto;
@@ -35,11 +37,11 @@ html {
 }
 
 .terminal-path {
-  color: #a9a9a9;
+  color: #FFEE8C;
 }
 
 .user {
-  color: #b9ca4a;
+  color: #C9E9D2;
 }
 
 .input-line {
@@ -47,17 +49,12 @@ html {
   align-items: center;
 }
 
-.icone {
-  color: #4ea6fd;
-  margin-right: 10px;
-}
-
 input {
   background: none;
+  font-family: 'Lexend', sans-serif;
   width: 100%;
   border: none;
   color: #c5c8c6;
-  font-family: 'Courier New', Courier, monospace;
   font-size: 16px;
   outline: none;
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 import Header from './components/Header';
-import MainSection from './components/mainSection';
 import PortfolioSection from './components/PortfolioSection';
 import Footer from './components/Footer';
+import SkillSection from './components/SkillSection';
 import TerminalSection from './components/TerminalSection';
 
 const App = () => {
@@ -11,6 +11,7 @@ const App = () => {
       <Header />
       <TerminalSection />
       <PortfolioSection />
+      <SkillSection />
       <Footer />
     </div>
   );
