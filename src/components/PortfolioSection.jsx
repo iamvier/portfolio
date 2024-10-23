@@ -7,28 +7,22 @@ import './PortfolioSection.css';
 const PortfolioSection = () => {
   const portfolioItems = [
     {
-      title: "E-Learning BSLC",
-      description: "An e-learning platform for students to access learning materials online.",
-      imageUrl: ELearningBSLC,
-      link: "https://elearning.bslc.or.id/", // Replace with the actual link
+      title: "BSLC Landing Page Design",
+      description: "A landing page design for the Binus Student Learning Community (BSLC) for training purposes.",
+      imageUrl: OJTBSLC,
+      link: "https://iamvier.github.io/ITDEV-OJT-BSLC/"
     },
     {
       title: "ISLab Recruitment Website",
       description: "An official recruitment website for the Information Systems Laboratory at BINUS University.",
       imageUrl: WebISLab,
-      link: "https://islab.apps.binus.ac.id/recruitmentislab/", // Replace with the actual link
+      link: "https://islab.apps.binus.ac.id/recruitmentislab/"
     },
     {
-      title: "BSLC Landing Page Design",
-      description: "A landing page design for the Binus Student Learning Community (BSLC) for training.",
-      imageUrl: OJTBSLC,
-      link: "https://iamvier.github.io/ITDEV-OJT-BSLC/", // Replace with the actual link
-    },
-    {
-      title: "JobQoo Web Design",
-      description: "Web design for a job search platform with a focus on startup culture.",
-      imageUrl: WebISLab,
-      link: "#", // Replace with the actual link
+      title: "E-Learning BSLC",
+      description: "An e-learning platform for students to access learning materials online.",
+      imageUrl: ELearningBSLC,
+      link: "https://elearning.bslc.or.id/"
     }
   ];
 

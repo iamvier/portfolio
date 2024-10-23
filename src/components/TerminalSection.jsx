@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import whiteRightAngle from '../assets/icons/whiteRightAngle.svg';
 import './TerminalSection.css';
 
 const TerminalSection = () => {
+    const themes = ['dark-theme', 'dracula-theme', 'forest-theme', 'ocean-theme'];
+    const [currentTheme, setCurrentTheme] = useState('dark-theme'); // Store theme state
+
     const initialContent = [
         { type: 'text', value: 'Welcome', delay: 1000 },
         { type: 'text', value: 'Starting the server...', delay: 500 },
@@ -63,7 +65,8 @@ const TerminalSection = () => {
                 { type: 'text', value: 'Name: Viery Joynaden' },
                 { type: 'text', value: 'Age: 20' },
                 { type: 'text', value: 'Location: Tangerang, Indonesia' },
-                { type: 'text', value: 'Currently Studying Information Systems in BINUS University' },
+                { type: 'text', value: 'Major: Information Systems in BINUS University' },
+                { type: 'text', value: 'Interests: Web Development, Cloud Computing, and System Architecture' },
                 {
                     type: 'tech-stack',
                     categories: [
@@ -112,7 +115,6 @@ const TerminalSection = () => {
                 { type: 'path', value: '# user in ~/iamvier' }
             ]);
         } else if (inputValue === 'restart') {
-            // Clear the terminal and restart with the initial content
             setTerminalContent([]);
             let currentIndex = 0;
             setTimeout(() => {
@@ -141,57 +143,69 @@ const TerminalSection = () => {
         }
         setInputValue('');
     };
+
+     const changeTheme = (newTheme) => {
+        setCurrentTheme(newTheme);
+    };
     
     return (
-        <div className="terminal-container" onClick={() => document.querySelector('input').focus()}>
-            <div className="terminal-header">
-                <span className="header-text">github.com/iamvier</span>
+        <div className='terminal-section'>
+            <div className="theme-buttons">
+                <button onClick={() => changeTheme('dark-theme')}>Dark Theme</button>
+                <button onClick={() => changeTheme('dracula-theme')}>Dracula Theme</button>
+                <button onClick={() => changeTheme('forest-theme')}>Forest Theme</button>
+                <button onClick={() => changeTheme('ocean-theme')}>Ocean Theme</button>
             </div>
-            <div className="terminal-body">
-                {terminalContent.map((item, index) => {
-                    if (item.type === 'text') {
-                        return <p key={index} dangerouslySetInnerHTML={{ __html: item.value }} />;
-                    } else if (item.type === 'tech-stack') {
-                        return (
-                            <div key={index} className="tech-stack">
-                                {item.categories.map((category, i) => (
-                                    <div key={i} className="category">
-                                        <p>{category.title}:</p>
-                                        <ul>
-                                            {category.technologies.map((tech, j) => (
-                                                <li key={j} style={{ color: tech.color }}>
-                                                    {tech.name}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                ))}
-                            </div>
-                        );
-                    } else if (item.type === 'command') {
-                        return (
-                            <p key={index}>
-                                <span className="command">{item.code}</span> {item.description}
-                            </p>
-                        );
-                    } else if (item.type === 'path') {
-                        return <p key={index} className="terminal-path">{item.value}</p>;
-                    } else if (item.type === 'user-input') {
-                        return <p key={index} className="user-command">{item.value}</p>;
-                    } else if (item.type === 'error') {
-                        return <p key={index} className="error">{item.value}</p>;
-                    }
-                    return null;
-                })}
-                <div className="input-line">
-                    <img src={whiteRightAngle} alt="Right angle icon" id="white-right-angle"/>
-                    <input
-                        type="text"
-                        value={inputValue}
-                        onChange={(e) => setInputValue(e.target.value)}
-                        onKeyPress={handleKeyPress}
-                        autoFocus
-                    />
+            
+            <div className={`terminal-container ${currentTheme}`} onClick={() => document.querySelector('input').focus()}>                <div className="terminal-header">
+                    <span className="header-text">github.com/iamvier</span>
+                </div>
+                <div className="terminal-body">
+                    {terminalContent.map((item, index) => {
+                        if (item.type === 'text') {
+                            return <p key={index} dangerouslySetInnerHTML={{ __html: item.value }} />;
+                        } else if (item.type === 'tech-stack') {
+                            return (
+                                <div key={index} className="tech-stack">
+                                    {item.categories.map((category, i) => (
+                                        <div key={i} className="category">
+                                            <p>{category.title}:</p>
+                                            <ul>
+                                                {category.technologies.map((tech, j) => (
+                                                    <li key={j} style={{ color: tech.color }}>
+                                                        {tech.name}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    ))}
+                                </div>
+                            );
+                        } else if (item.type === 'command') {
+                            return (
+                                <p key={index}>
+                                    <span className="command">{item.code}</span> {item.description}
+                                </p>
+                            );
+                        } else if (item.type === 'path') {
+                            return <p key={index} className="terminal-path">{item.value}</p>;
+                        } else if (item.type === 'user-input') {
+                            return <p key={index} className="user-command">{item.value}</p>;
+                        } else if (item.type === 'error') {
+                            return <p key={index} className="error">{item.value}</p>;
+                        }
+                        return null;
+                    })}
+                    <div className="input-line">
+                        <i className='fas fa-angle-right' id='angle-right'></i>
+                        <input
+                            type="text"
+                            value={inputValue}
+                            onChange={(e) => setInputValue(e.target.value)}
+                            onKeyPress={handleKeyPress}
+                            autoFocus
+                        />
+                    </div>
                 </div>
             </div>
         </div>

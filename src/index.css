@@ -1,8 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
 html {
+  /* background-color: rgb(24, 24, 27); black*/ 
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color-scheme: light dark;
+
+  .dark-theme {
+    --background-color: #1e1e1e;
+    --text-color: #c5c8c6;
+    --header-bg-color: #2d2d2d;
+    --command-color: #4ea6fd;
+    --path-color: #ffee8c;
+    --input-line-color: #c5c8c6;
+    --error-color: #ff0000;
+    --user-command-color: #00ff00;
+  }
+  
+  .dracula-theme {
+    --background-color: #282a36;
+    --text-color: #f8f8f2;
+    --header-bg-color: #44475a;
+    --command-color: #ff5555;
+    --path-color: #ff79c6;
+    --input-line-color: #f8f8f2;
+    --error-color: #ff5555;
+    --user-command-color: #ff5555;
+  }
+  
+  .forest-theme {
+    --background-color: #2b3a2f;
+    --text-color: #d1e7c4;
+    --header-bg-color: #3d5247;
+    --command-color: #5ecf83;
+    --path-color: #66FFFF;  
+    --input-line-color: #d1e7c4;
+    --error-color: #ff6347;
+    --user-command-color: #00ff7f;
+  }
+  
+  .ocean-theme {
+    --background-color: #102e4a;
+    --text-color: #d1e7ff;
+    --header-bg-color: #1c4f78;
+    --command-color: #61dafb;
+    --path-color: #b3ff00;
+    --input-line-color: #d1e7ff;
+    --error-color: #ff4500;
+    --user-command-color: #00ced1;
+  }
 }

@@ -1,4 +1,4 @@
-header{
+header {
   margin: 0;
   padding: 0;
 }
@@ -39,7 +39,7 @@ header{
 }
 
 .header-middle a:hover {
-  color: #FFDD57;
+  color: #007bff;
   animation: linkHoverAnimation 0.3s ease-in-out;
 }
 
